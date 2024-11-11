@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #87CEEB; /* Fondo de cielo */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    background-color: #ff4b4b; /* Rojo Mario */
+    padding: 40px;
+}
+
+h1 {
+    font-size: 3em;
+    color: #ffd700; /* Amarillo de las monedas */
+}
+
+h2 {
+    color: #ff6347; /* Rojo más claro */
+}
+
+.info, .celebracion {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #3b9c3b; /* Verde Luigi */
+    background-color: #f0e68c; /* Amarillo claro */
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    background-color: #3b9c3b; /* Verde Luigi */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #8b4513; /* Marrón del suelo */
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.cuenta-regresiva {
+    text-align: center;
+    margin: 40px 0;
+    color: #ff4b4b; /* Rojo Mario */
+}
+
+.cuenta-regresiva h3 {
+    font-size: 2em;
+    color: #ffd700; /* Amarillo de las monedas */
+    margin-bottom: 10px;
+}
+
+.contador {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tiempo {
+    font-size: 1.8em;
+    background-color: #3b9c3b; /* Verde Luigi */
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 60px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tiempo:nth-child(odd) {
+    background-color: #ff6347; /* Rojo fuego */
+}
+
+.tiempo:nth-child(even) {
+    background-color: #ffd700; /* Amarillo de las monedas */
+    color: #333;
+}
+.mario-gif {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.mario-gif img {
+    width: 165px; /* Ajusta el tamaño según lo que prefieras */
+    animation: saltar 2s infinite ease-in-out;
+}
+
+@keyframes saltar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-60px); /* Ajusta la altura del salto */
+    }
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    .info, .celebracion {
+        margin: 10px;
+        padding: 15px;
+    }
+    .contador {
+        gap: 5px;
+    }
+    .tiempo {
+        font-size: 1.2em;
+        padding: 8px;
+    }
+    .mario-gif img {
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    .info, .celebracion {
+        padding: 10px;
+    }
+    .cuenta-regresiva h3 {
+        font-size: 1.5em;
+    }
+    .tiempo {
+        font-size: 1em;
+        padding: 6px;
+    }
+    .mario-gif img {
+        width: 50px;
+    }
+}
+
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-5px);
+    }
+    40% {
+        transform: translateY(0);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+    80% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+.contador {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: inline-block;
+    animation: bounce 2s ease-in-out infinite; 
+
+}
+h1 {
+    position: relative;
+    font-size: 3em;
+    color: #ffcc00; /* Color amarillo similar a Mario */
+    font-weight: bold;
+    text-align: center;
+}
+
+h1::before, h1::after {
+    content: "⭐";
+    position: absolute;
+    animation: starEffect 1.5s ease-in-out infinite;
+}
+
+h1::before {
+    top: -10px;
+    left: -20px;
+    animation-delay: 0s;
+}
+
+h1::after {
+    top: -10px;
+    right: -20px;
+    animation-delay: 0.75s;
+}
+@keyframes parpadeo {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+}
+
+#titulo {
+    animation: parpadeo 2.5s infinite; /* Parpadeo cada 1.5 segundos */
+}
+
+p1 {
+    font-size: 1.2em; /* Aumenta el tamaño de la fuente */
+    color: #000000; /* Color dorado para el texto */
+    text-align: center; /* Centra el texto */
+    margin-top: 20px; /* Agrega un margen superior */
+    margin-bottom: 20px; /* Agrega un margen inferior */
+    font-family: 'Arial', sans-serif; /* Cambia la fuente */
+    line-height: 1.6; /* Ajusta la altura de la línea */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Agrega un sutil efecto de sombra */
+}
+

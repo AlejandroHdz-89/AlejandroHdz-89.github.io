@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación a mi Fiesta de Graduación</title>
+    <link rel="stylesheet" href="estilo_invitacion.css"> 
+    <script src="invitacion.js"></script>
+
+    
+</head>
+
+<body>
+
+    <div class="nubes"></div>
+    
+    <header>
+        <h1 id="titulo">¡Invitación Digital a mi Fiesta de Graduación!</h1>
+        <p1>Ingeniería en Redes Inteligentes & Ciberseguridad</p1>
+    </header>
+    <section class="info">
+        <h2>¡Celebramos el logro de una carrera llena de retos!</h2>
+        <p>Después de mucho esfuerzo y dedicación, finalmente llegó el momento de celebrar este gran hito. ¡Te invito a mi fiesta de graduación!</p>
+        <ul>
+            <li><strong>Fecha:</strong> 30 de Noviembre de 2024</li>
+            <li><strong>Hora:</strong> 4:00 P.M. </li>
+            <li><strong>Lugar:</strong> Palapa Don Mere</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>¡Nos vemos pronto para celebrar juntos!</p>
+        <p>Con cariño, Arath Alejandro Hernández Salazar</p>
+    </footer>
+
+    <section class="cuenta-regresiva">
+        <h3>Faltan:</h3>
+        <div id="contador" class="contador"></div>  <!-- Contador con estilo -->
+    </section>
+    
+    <script>
+        // Establecer la fecha de la fiesta: 30 de noviembre de 2024 a las 19:00 (7:00 PM)
+        var cuentaRegresiva = new Date("2024-11-30T16:00:00").getTime();
+    
+        var x = setInterval(function() {
+            var ahora = new Date().getTime();
+            var distancia = cuentaRegresiva - ahora;
+    
+            var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            var segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+    
+            // Mostrar la cuenta regresiva en la página con el formato adecuado
+            document.getElementById("contador").innerHTML = `
+                <span class="tiempo">${dias}d</span> 
+                <span class="tiempo">${horas}h</span> 
+                <span class="tiempo">${minutos}m</span> 
+                <span class="tiempo">${segundos}s</span>
+            `;
+    
+            // Cuando la cuenta regresiva llega a cero, muestra un mensaje
+            if (distancia < 0) {
+                clearInterval(x);
+                document.getElementById("contador").innerHTML = "¡La fiesta ya ha comenzado!";
+            }
+        }, 1000);
+    </script>
+
+    <section class="cuenta-regresiva">
+        <div id="contador" class="contador"></div>  <!-- Contador con estilo -->
+        <div class="mario-gif">
+            <img src="mario_gif.gif" alt="Mario saltando">
+        </div>
+    </section>
+    
+    
+
+</body>
+</html>
